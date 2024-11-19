@@ -132,7 +132,6 @@ public class PracticalTestBook {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        // Adding some books to the library
         library.add(new ReferenceBook(1, "Introduction to Algorithms", "Thomas H. Cormen", 4));
         library.add(new FictionBook(2, "Coraline", "Neil Gaiman", "Fantasy"));
         library.add(new Periodical(3, "National Geographic", "Various", 12, "Monthly"));
