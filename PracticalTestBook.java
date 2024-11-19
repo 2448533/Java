@@ -3,11 +3,12 @@ import java.util.Scanner;
 
 
 class Book {
-    private int bookId;
-    private String title;
-    private String author;
-    private boolean isAvailable;
-    private int overdueDays;
+    
+    int bookId;
+    String title;
+    String author;
+    boolean isAvailable;
+    int overdueDays;
     private static final double FINE_PER_DAY = 5.0; 
 
     private static int totalBooks = 0;
@@ -77,7 +78,7 @@ class Book {
 
 
 class ReferenceBook extends Book {
-    private int edition;
+    int edition;
 
     public ReferenceBook(int bookId, String title, String author, int edition) {
         super(bookId, title, author);
@@ -92,7 +93,7 @@ class ReferenceBook extends Book {
     }
 }
 
-// Derived class: FictionBook
+
 class FictionBook extends Book {
     private String genre;
 
