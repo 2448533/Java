@@ -108,7 +108,7 @@ class FictionBook extends Book {
     }
 }
 
-// Derived class: Periodical
+
 class Periodical extends ReferenceBook {
     private String issueFrequency;
 
@@ -124,7 +124,7 @@ class Periodical extends ReferenceBook {
     }
 }
 
-// Main Class for Library Management System
+
 public class PracticalTestBook {
     private static ArrayList<Book> library = new ArrayList<>();
 
