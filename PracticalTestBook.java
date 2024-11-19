@@ -127,9 +127,11 @@ class Periodical extends ReferenceBook {
 
 
 public class PracticalTestBook {
+    
     private static ArrayList<Book> library = new ArrayList<>();
 
     public static void main(String[] args) {
+        
         Scanner scanner = new Scanner(System.in);
 
         library.add(new ReferenceBook(1, "Introduction to Algorithms", "Thomas H. Cormen", 4));
