@@ -1,7 +1,6 @@
 import java.util.LinkedList;
 import java.util.Queue;
 
-
 class ETEpracticaltest2 {
 
     static final int queSize = 10;
@@ -16,8 +15,6 @@ class ETEpracticaltest2 {
 
         chef.start();
         waiter.start();
-
-        System.out.println("All orders processed");
     }
 
 }
@@ -25,47 +22,42 @@ class ETEpracticaltest2 {
 class Chef implements Runnable
 {
     Queue<String> orderQue;
-    int totalOrders;
     int prepared = 0;
 
-    public Chef(Queue<String> orderQue, int totalOrders) {
+    public Chef(Queue<String> orderQue, int totalorder) {
         this.orderQue = orderQue;
-        this.totalOrders = totalOrders;
+        this.totalorder = totalorder;
     }
 
     public void run() {
-       
-            while (prepared < totalOrders) {
-
+           while (prepared < totalorder) {
                     String order = "Order " + (prepared + 1);
                     orderQue.add(order);
                     System.out.println("Chef prepared: " + order);
                     prepared++;
                     notifyAll();
-                
-            }
+                }
     }
 
 }
 
 class Waiter implements Runnable
 {
-    Queue<String> orderQueue;
-    int totalOrders;
-    delivered = 0;
+    Queue<String> orderQue;
+    int delivered = 0;
 
-    public Waiter(Queue<String> orderQueue,int totalOrders) {
-        this.orderQueue = orderQueue;
-        this.totalOrders = totalOrders;
+    public Waiter(Queue<String> orderQue,int totalorders) {
+        this.orderQue = orderQue;
+        this.totalorders = totalorders;
     }
 
     public void run() {
         
-                    while (orderQueue.isEmpty()) {
+                    while (orderQue.isEmpty()) {
                         wait();
                     }
 
-                    String order = orderQueue.poll();
+                    String order = orderQue.poll();
                     System.out.println("Waiter delivered: " + order);
                     delivered++;
                     notifyAll();
